@@ -98,7 +98,7 @@ uglyURLs = false
     # 座右铭或简介
     motto = "Viva La Vida"
     # 头像
-    avatar = "/icons/apple-touch-icon.png"
+    avatar = "/icons/v2.jpg"
     # 网站（默认值：baseURL）
     website = "https://seso.icu/"
     # 推特

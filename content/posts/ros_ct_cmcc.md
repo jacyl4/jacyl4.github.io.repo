@@ -126,7 +126,7 @@ add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-ty
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-type=!local dst-address-list=CMv2 action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 ```
 
-## 3，PCC标记
+## 4，PCC标记
 
 先做国内不周运营商指定出口，因为电信双拨，双拨的还得PCC聚合下，至于叠不叠带宽，各地随缘了。移动就单拨就直接标记一下就行了。
 ```
@@ -144,7 +144,7 @@ add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:3/2 dst-address-type=!local action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 ```
 
-## 4，让数据根据上面线路标记选择路由
+## 5，让数据根据上面线路标记选择路由
 ```
 /ip firewall mangle
 add chain=prerouting connection-mark=CT_conn1 in-interface=bridge1 action=mark-routing new-routing-mark=CT1 passthrough=yes comment="dynamic pbr"
@@ -166,3 +166,8 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1 routin
 add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routing-mark=CT2
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 routing-mark=CMCC1
 ```
+
+# 乖巧
+
+![给个赏吧](https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png)
+

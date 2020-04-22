@@ -75,7 +75,9 @@ add chain=dstnat protocol=tcp dst-port=1-65535 in-interface=pppoe-CT1 action=dst
 ## 0，导入国内运营商ip段
 
 下载文件 [ros-dpbr-CT-CMCC.rsc](https://raw.githubusercontent.com/jacyl4/ros-pbr-CT-CMCC/master/ros-dpbr-CT-CMCC.rsc)
+
 导入winbox的Files里
+
 运行如下，把ip段导入ros firewall的address lists里，供下面标记时使用。（防止重复导入，前两行是删除现有的电信段与移动段）
 ```
 /ip firewall address-list remove [find list="dpbr-CT"]

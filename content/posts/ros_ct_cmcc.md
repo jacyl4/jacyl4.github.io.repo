@@ -139,9 +139,9 @@ add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-li
 ros防火墙规则自上而下顺序匹配，上面没匹配到的，就接下来整体聚合。
 ```
 /ip firewall mangle
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:11/0 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=PCC
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:11/5 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:11/10 dst-address-type=!local action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:3/0 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=PCC
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:3/1 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:3/2 dst-address-type=!local action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 ```
 
 ## 4，让数据根据上面线路标记选择路由

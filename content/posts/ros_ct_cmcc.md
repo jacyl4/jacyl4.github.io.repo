@@ -128,7 +128,7 @@ add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-ty
 
 ## 4，PCC标记
 
-先做国内不周运营商指定出口，因为电信双拨，双拨的还得PCC聚合下，至于叠不叠带宽，各地随缘了。移动就单拨就直接标记一下就行了。
+先做国内不同运营商指定出口，因为电信双拨，双拨的还得PCC聚合下，至于叠不叠带宽，各地随缘了。移动就单拨就直接标记一下就行了。
 ```
 /ip firewall mangle
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses:2/0 dst-address-list=dpbr-CT dst-address-type=!local action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=PCC

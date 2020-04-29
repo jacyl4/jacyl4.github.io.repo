@@ -57,20 +57,14 @@ add chain=forward connection-state=related action=accept comment="allow related 
 add chain=forward protocol=tcp action=jump jump-target=tcp
 add chain=forward protocol=udp action=jump jump-target=udp
 add chain=forward protocol=icmp action=jump jump-target=icmp
-```
 
-```
-/ip firewall raw
-add action=drop chain=prerouting comment="Port scanners" protocol=tcp psd=21,3s,3,1
-add action=drop chain=prerouting comment="Drop oversized unfragmented packets" packet-size=1492-65535 protocol=icmp
-add action=drop chain=prerouting comment="SYN-FIN attack protection" protocol=tcp tcp-flags=fin,syn
-add action=drop chain=prerouting comment="SYN-RST attack protection" protocol=tcp tcp-flags=syn,rst
-add action=drop chain=prerouting comment="X-Mas attack protection" protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
-add action=drop chain=prerouting comment="NMAP FIN attack protection" protocol=tcp tcp-flags=fin,!syn,!rst,!psh,!ack,!urg
-add action=drop chain=prerouting comment="NMAP Push attack protection" protocol=tcp tcp-flags=fin,syn,rst,ack,urg,!psh
-add action=drop chain=prerouting comment="NMAP FIN/PSH/URG attack protection" protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
-add action=drop chain=prerouting comment="NULLflags attack protection" protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg
-add action=drop chain=prerouting comment="ALLflags attack protection" protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg
+add chain=input protocol=tcp psd=21,3s,3,1 action=drop comment="Port scanners"
+add chain=input protocol=tcp tcp-flags=fin,!syn,!rst,!psh,!ack,!urg action=drop comment="NMAP FIN Stealth scan"
+add chain=input protocol=tcp tcp-flags=fin,syn action=drop comment="SYN/FIN scan"
+add chain=input protocol=tcp tcp-flags=syn,rst action=drop comment="SYN/RST scan"
+add chain=input protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack action=drop comment="FIN/PSH/URG scan"
+add chain=input protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg action=drop comment="ALL/ALL scan"
+add chain=input protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg action=drop comment="NMAP NULL scan"
 ```
 
 # 四，建立nat伪装与端口映射

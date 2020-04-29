@@ -122,8 +122,7 @@ add address=222.222.222.222 list=CMv2 comment=cc
 
 ```
 /ip firewall mangle
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/0 dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=v2
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/1 dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=v2
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-list=CMv2 action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 ```
 

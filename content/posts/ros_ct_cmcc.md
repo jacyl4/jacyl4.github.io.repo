@@ -59,6 +59,20 @@ add chain=forward protocol=udp action=jump jump-target=udp
 add chain=forward protocol=icmp action=jump jump-target=icmp
 ```
 
+```
+/ip firewall raw
+add action=drop chain=prerouting comment="Port scanners" protocol=tcp psd=21,3s,3,1
+add action=drop chain=prerouting comment="Drop oversized unfragmented packets" packet-size=1492-65535 protocol=icmp
+add action=drop chain=prerouting comment="SYN-FIN attack protection" protocol=tcp tcp-flags=fin,syn
+add action=drop chain=prerouting comment="SYN-RST attack protection" protocol=tcp tcp-flags=syn,rst
+add action=drop chain=prerouting comment="X-Mas attack protection" protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
+add action=drop chain=prerouting comment="NMAP FIN attack protection" protocol=tcp tcp-flags=fin,!syn,!rst,!psh,!ack,!urg
+add action=drop chain=prerouting comment="NMAP Push attack protection" protocol=tcp tcp-flags=fin,syn,rst,ack,urg,!psh
+add action=drop chain=prerouting comment="NMAP FIN/PSH/URG attack protection" protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
+add action=drop chain=prerouting comment="NULLflags attack protection" protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg
+add action=drop chain=prerouting comment="ALLflags attack protection" protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg
+```
+
 # 四，建立nat伪装与端口映射
 
 ```
@@ -160,7 +174,7 @@ add chain=output connection-mark=CMCC_conn1 action=mark-routing new-routing-mark
 ```
 /ip route
 add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1
-add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1
+add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=2
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=2
 add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1 routing-mark=CT1
 add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routing-mark=CT2

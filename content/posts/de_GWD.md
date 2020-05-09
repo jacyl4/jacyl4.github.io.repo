@@ -24,7 +24,7 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 ## 服务端
 
-![server](https://i.loli.net/2020/02/23/EZldb3zPtgKGprX.png)
+![Snipaste_2020-05-09_08-33-46.png](https://i.loli.net/2020/05/09/NbAYPetxiHWjKql.png)
 
 ssh登录vps
 
@@ -40,15 +40,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/jacyl4
 
 ## 客户端
 
-![client](https://i.loli.net/2020/02/22/5L3go4kPVSmrTID.png)
-
-![client_do](https://i.loli.net/2020/02/23/6Qb3zBlR5WoPTAe.png)
-
-Compatible Edition (amd64&arm64)
-```
-apt install -y wget
-bash <(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client)
-```
+![Snipaste_2020-05-09_08-34-34.png](https://i.loli.net/2020/05/09/r1etxqvofSXlOGJ.png)
 
 General Edition (amd64)
 ```
@@ -56,7 +48,15 @@ apt install -y wget
 bash <(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client_do)
 ```
 
-通常用第二个脚本，如果是armbian平台的话，才选第一个脚本。
+![Snipaste_2020-05-09_08-34-08.png](https://i.loli.net/2020/05/09/YKIRUT6JHbS71ak.png)
+
+Compatible Edition (amd64&arm64)
+```
+apt install -y wget
+bash <(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client)
+```
+
+通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。
 
 首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。
 

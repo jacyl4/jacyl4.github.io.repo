@@ -8,7 +8,7 @@ draft: false
 
 [Github](https://github.com/jacyl4/de_GWD)
 
-de_GWD(Debian Gateway&DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速，可以说一骑绝尘。
+de_GWD(Debian Gateway&DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。
 
 DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。
 

@@ -12,7 +12,7 @@ draft: false
 
 <br>
 
-####查看端口占用
+#### 查看端口占用
 
 `netstat -anp|grep 5390`
 

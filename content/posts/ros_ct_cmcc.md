@@ -2,7 +2,7 @@
 title: "RouterOS电信移动聚合实例"
 tags: [ "ros", "分流" ]
 categories: [ "路由" ]
-date: 2020-04-22T09:42:37+08:00
+date: 2020-04-22
 draft: false
 ---
 

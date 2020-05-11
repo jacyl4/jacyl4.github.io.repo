@@ -14,8 +14,8 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。    
 
-![de_GWD](https://i.loli.net/2020/02/26/Sk7awvCJTLsUh8D.png)
-
+![de_GWD](https://i.loli.net/2020/02/26/Sk7awvCJTLsUh8D.png)    
+内网设备分流ip，用空格分隔。    
 # 部署
 
 提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。
@@ -77,9 +77,9 @@ wireguard组件，在每次debian内核更新后，需要重新编译安装。
 
 - 自动每天凌晨更新分流规则    
 
-![Snipaste_2020-04-28_19-05-37.png](https://i.loli.net/2020/04/28/GrEYR3LJ51sDA9Q.png)    
+    
+    
 
-内网设备分流ip，用空格分隔。    
 
 
 更多疑问 

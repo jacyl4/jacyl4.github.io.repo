@@ -16,6 +16,8 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 ![de_GWD](https://i.loli.net/2020/02/26/Sk7awvCJTLsUh8D.png)    
 内网设备分流ip，用空格分隔。    
+只有一个doh地址的时候，doh1跟doh2填同一个地址。    
+
 # 部署
 
 提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。

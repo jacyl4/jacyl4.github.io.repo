@@ -59,6 +59,7 @@ Compatible Edition (amd64&arm64)
 ![Snipaste_2020-05-12_00-59-03.png](https://i.loli.net/2020/05/12/SYc8MIi3pzTWDla.png)
 
 
+需要以root用户安装
 
 通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。如果x86 cpu比较落后，不能运行docker，那也只能选第二个版本。
 

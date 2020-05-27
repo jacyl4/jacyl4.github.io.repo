@@ -21,6 +21,7 @@ draft: false
 #### DD命令
 
 ##### 国内
+```
 bash <(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \
 -d 9 -v amd64 -a \
 -p password \
@@ -28,8 +29,10 @@ bash <(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell
 --ip-addr 192.168.1.2 \
 --ip-mask 255.255.255.0 \
 --ip-gate 192.168.1.1
+```
 
 ##### 国外
+```
 bash <(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/1.1.1.1/') \
 -d 9 -v amd64 -a \
 -p password \
@@ -37,6 +40,7 @@ bash <(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell
 --ip-addr 10.0.0.2 \
 --ip-mask 255.255.255.0 \
 --ip-gate 10.0.0.1
+```
 
 * 9 就是debian9
 * password 就是密码

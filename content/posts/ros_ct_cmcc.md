@@ -179,6 +179,4 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 
 
 # 乖巧 ☆⌒(*＾-゜)v THX!!
-
-![给个赏吧](https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png)
-
+<img src="https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png" width="260" alt="给个赏吧">

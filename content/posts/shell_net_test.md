@@ -2,8 +2,7 @@
 title: "终端内用于查看网络情况的指令"
 tags: [ "debian", "shell" ]
 categories: [ "linux" ]
-timezone: UTC+8
-date: 2020-05-09
+date: 2020-05-09T00:00:00+08:00
 draft: false
 ---
 

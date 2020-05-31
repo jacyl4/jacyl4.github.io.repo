@@ -2,8 +2,7 @@
 title: "justhost 俄罗斯VPS cn2"
 tags: [ "cn2" ]
 categories: [ "VPS" ]
-timezone: UTC+8
-date: 2020-06-01
+date: 2020-06-01T04:00:00+08:00
 draft: false
 ---
 

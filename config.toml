@@ -37,7 +37,7 @@ enableGitInfo = false
 enableRobotsTXT = true
 
 # 每一分页的文章数（仅对「文章摘要」首页布局有效）
-paginate = 10
+paginate = 20
 
 # URL 相关
 disablePathToLower = false
@@ -329,7 +329,7 @@ uglyURLs = false
     #      Open Graph、Atom、RSS
 
     # 站点的创建时间
-    siteCreatedTime = "2017-07-20T20:17:43+00:00"
+    siteCreatedTime = "2017-07-20T20:17:43+08:00"
     # 注意：请保持此格式，更改数字
 
     # 站点的推特帐号

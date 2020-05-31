@@ -2,8 +2,8 @@
 title: "给国外/国内虚拟机DD debian 系统"
 tags: [ "debian", "DD" ]
 categories: [ "linux" ]
-date: 2020-05-27
 timezone: UTC+8
+date: 2020-05-27
 draft: false
 ---
 

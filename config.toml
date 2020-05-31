@@ -16,13 +16,13 @@ newContentEditor = ""
 
 # i18n
 defaultContentLanguage = "zh"
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 
 # 是否复数化列表页面的标题
-pluralizeListTitles = false
+pluralizeListTitles = true
 
 # 摘要的字数限制
-summaryLength = 120
+summaryLength = 0
 
 # 是否开启 GitHub 风格的 Emoji 书写方式
 enableEmoji = false
@@ -31,7 +31,7 @@ enableEmoji = false
 footnoteReturnLinkContents = "↩"
 
 # 是否启用 Git 版本信息
-enableGitInfo = false
+enableGitInfo = true
 
 # 是否生成 robots.txt 文件
 enableRobotsTXT = true
@@ -237,7 +237,7 @@ uglyURLs = false
     # 说明：居中布局（center）或弹性布局（flex）
 
     # 顶栏宽度的回退值
-    headerFallbackWidth = "36em"
+    headerFallbackWidth = "54em"
     # 说明：默认情况，MemE 使用 main-inner 元素
     #      的宽度作为顶栏宽度，但是在一些页面（比
     #      如「诗意人生」和「视频片段」布局的首页），
@@ -280,7 +280,7 @@ uglyURLs = false
     # 说明：对弹性布局的顶栏无效
 
     # 是否按文章分区高亮当前菜单项
-    activeInSection = false
+    activeInSection = true
     # 说明：如果开启，那么当某一文章的分区名是某
     #      一菜单项中的 `url` 时，该文章页面中
     #      的该菜单项也会被高亮
@@ -395,7 +395,7 @@ uglyURLs = false
     # 列表页面
 
     # 宽度
-    listWidth = 36
+    listWidth = 54
     # 说明：如果留空（""），则用 42 作为默认值
     #      单位：em
 
@@ -407,7 +407,7 @@ uglyURLs = false
     # 注意：请遵循格式 https://gohugo.io/functions/format/
 
     # 日期的位置
-    listDatePosition = "right"
+    listDatePosition = "left"
     # 说明：left（左边）或 right（右边）
 
     # 是否按月份分隔列表
@@ -469,7 +469,7 @@ uglyURLs = false
     enableDarkMode = true
 
     # 默认模式
-    defaultTheme = "light"
+    defaultTheme = "true"
     # 说明：light（浅色模式）或 dark（深色模式）
 
     # 是否隐藏模式切换开关
@@ -656,7 +656,7 @@ uglyURLs = false
     # 注意：只支持 HSL 颜色值
 
     # 文章的内容宽度
-    postWidth = 36
+    postWidth = 54
     # 说明：如果留空（""），则用 42 作为默认值
     #      单位：em
 

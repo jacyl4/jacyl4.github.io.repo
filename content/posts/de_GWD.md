@@ -14,9 +14,8 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。    
 
-![Snipaste_2020-04-28_19-05-37.png](https://i.loli.net/2020/04/28/GrEYR3LJ51sDA9Q.png)
-内网设备分流ip，用空格分隔。    
-只有一个doh地址的时候，doh1跟doh2填同一个地址。    
+![de_gwd](https://i.loli.net/2020/06/10/drOsxTFckb4who2.png)
+只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。    
 
 # 部署
 
@@ -26,7 +25,7 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 ## 服务端
 
-![Snipaste_2020-05-12_01-01-12.png](https://i.loli.net/2020/05/12/bKfZG3BXWJ9wjD1.png)
+![server](https://i.loli.net/2020/06/10/qWVbimIha9s1UeJ.png)
 
 
 提前准备好域名，做好a记录。    
@@ -52,11 +51,11 @@ supp_body 用于存放wordpress nextcloud等程序的伪静态内容
 
 
 General Edition (amd64)
-![Snipaste_2020-05-12_00-58-45.png](https://i.loli.net/2020/05/12/EdTgwehSUJGpLaB.png)    
+![client_do](https://i.loli.net/2020/06/10/F1mkOphUEBTgxVr.png)    
 
 
 Compatible Edition (amd64&arm64)
-![Snipaste_2020-05-12_00-59-03.png](https://i.loli.net/2020/05/12/SYc8MIi3pzTWDla.png)
+![client](https://i.loli.net/2020/06/10/iJ2vKInt8VNBWYz.png)
 
 
 需要以root用户安装

@@ -14,7 +14,7 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。    
 
-![de_gwd](https://i.loli.net/2020/06/10/drOsxTFckb4who2.png)
+![de_gwd](https://i.loli.net/2020/06/10/quQOBHi9I7Dg38R.png)
 只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。    
 
 # 部署

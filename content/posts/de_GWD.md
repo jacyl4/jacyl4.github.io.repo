@@ -71,7 +71,7 @@ Compatible Edition (amd64&arm64)
 装完后，关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。
 
 
-有公网ip的话，可以选项8安装wireguard组件。
+有公网ip的话，可以选项3安装wireguard组件。
 
 wireguard组件，在每次debian内核更新后，需要重新编译安装。
 

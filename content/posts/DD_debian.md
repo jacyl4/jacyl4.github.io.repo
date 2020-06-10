@@ -36,7 +36,7 @@ bash <(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell
 bash <(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/1.1.1.1/') \
 -d 9 -v amd64 -a \
 -p password \
--apt "http://deb.debian.org/debian/debian" \
+-apt "http://deb.debian.org/debian" \
 --ip-addr 10.0.0.2 \
 --ip-mask 255.255.255.0 \
 --ip-gate 10.0.0.1

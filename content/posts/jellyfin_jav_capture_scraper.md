@@ -11,11 +11,17 @@ draft: false
 
 
 
-#### 预先规划好IP地址
+#### 环境准备
+预先规划好IP地址
 NAS IP: 10.0.0.4    
 Jellyfin IP: 10.0.0.6
 
 我JAV的文件在群晖的 `/volume1/Transmission/JAV` 文件夹下
+
+在 PVE 上， 新建个 debian 的 lxc 容器    
+新建lxc容器的时候，Unprivileged container: 不需要勾选
+
+运行容器前，点击 即将要安装 Jellyfin 的容器， options， 编辑最后一个选项 Features ，勾上NFS。
 
 #### 登录群晖，开启群晖的nfs共享。
 

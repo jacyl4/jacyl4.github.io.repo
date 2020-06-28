@@ -12,7 +12,7 @@ draft: false
 
 
 #### 环境准备
-预先规划好IP地址
+预先规划好IP地址    
 NAS IP: 10.0.0.4    
 Jellyfin IP: 10.0.0.6
 
@@ -37,7 +37,6 @@ Jellyfin IP: 10.0.0.6
 ## 搭建Jellyfin
 
 #### 通过nfs连接nas存储
-群晖上设定nfs共享
 
 ssh登录jellyfin所在的 pve lxc debian 容器，把群晖里的Transmission文件夹挂载到 pve lxc debian容器的 `/anas`
 ```

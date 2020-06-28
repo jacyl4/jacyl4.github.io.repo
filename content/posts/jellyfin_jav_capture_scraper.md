@@ -12,6 +12,7 @@ draft: false
 
 
 #### 环境准备
+
 预先规划好IP地址    
 NAS IP: 10.0.0.4    
 Jellyfin IP: 10.0.0.6

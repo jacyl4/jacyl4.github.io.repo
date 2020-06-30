@@ -57,7 +57,7 @@ wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | apt-key add -
 echo "deb [arch=$(dpkg --print-architecture)] https://repo.jellyfin.org/debian $(cat /etc/os-release | grep VERSION= | cut -d'(' -f2 | cut -d')' -f1) main" > /etc/apt/sources.list.d/jellyfin.list
 
 apt update
-apt install jellyfin ffmpeg nginx
+apt install jellyfin
 
 usermod -aG postfix jellyfin 
 systemctl restart jellyfin
@@ -128,7 +128,8 @@ Movie 图片获取程序 也只需要勾选 JavScraper
 
 
 ## 配置Jellyfin https 访问 （可选）
-由于上面已经通过 apt 安装过 nginx 了。下面直接给nginx写配置就行了
+`apt install nginx`
+
 ```
 rm -rf /etc/nginx/nginx.conf
 cat << EOF > /etc/nginx/nginx.conf

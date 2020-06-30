@@ -46,7 +46,8 @@ cat << EOF >/etc/fstab
 # UNCONFIGURED FSTAB FOR BASE SYSTEM
 10.0.0.4:/volume1/Transmission /anas nfs nfsvers=3,hard,timeo=600,retrans=2,noatime,nodiratime,_netdev 0 0
 EOF
-systemctl daemon-reload
+
+reboot
 ```
 
 #### APT安装Jellyfin
@@ -60,11 +61,6 @@ apt install jellyfin ffmpeg nginx
 
 usermod -aG postfix jellyfin 
 systemctl restart jellyfin
-
-chmod -R 755 /anas
-chown -R jellyfin:jellyfin /anas
-
-reboot
 ```
 
 至此，已经可以用 Jellyfin IP: `10.0.0.6:8096` 通过浏览器来访问jellyfin了。

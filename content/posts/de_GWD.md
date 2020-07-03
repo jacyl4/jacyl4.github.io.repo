@@ -12,6 +12,8 @@ de_GWD(Debian bypass Gateway & DNS)专注旁路，运行于debian的一个完善
 
 DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。    
 
+双端配合，其于linux debian，特调tcp参数，可以从内核层面，略微提升连接性能。    
+
 需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。    
 
 ![de_gwd](https://i.loli.net/2020/06/10/quQOBHi9I7Dg38R.png)

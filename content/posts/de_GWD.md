@@ -16,7 +16,7 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。    
 
-![de_gwd](https://i.loli.net/2020/06/10/quQOBHi9I7Dg38R.png)
+![de_gwd](https://i.loli.net/2020/07/05/Ba6YSGbXEcVAKLO.png)
 只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。    
 
 # 部署
@@ -81,8 +81,22 @@ wireguard组件，在每次debian内核更新后，需要重新编译安装。
 
 - 自动每天凌晨更新分流规则    
 
-    
-    
+- 组件通过install按钮安装后，刷新页面显示选型
+   - frp
+      - 可以用于映射一个内网的服务端口，也可以用于内网穿透转接wireguard
+
+      - 需要大陆服务器，或者nat机，提前确认好服务端端口
+
+      - Bind-Port即de_GWD 到 大陆服务器 之前建立链接进行内网穿透的端口
+
+      - Bind-Port，服务器端口，本地端口，可以为同一个，但是确认好tcp或udp
+
+      - 生成的安装指令，可以直接在大陆服务器上直接快速安装frp服务端
+
+      - 转接wireguard时，wireguard的endpoint域名与端口，直接填frp的服务器域名与服务器端口
+
+      - kcp与wireguard皆为udp
+
 
 
 

@@ -115,6 +115,7 @@ https://github.com/JavScraper/Emby.Plugins.JavScraper/releases
 chmod 644 /var/lib/jellyfin/plugins/JavScraper.dll
 chown jellyfin:jellyfin /var/lib/jellyfin/plugins/JavScraper.dll
 ```
+- (禁用JavScrapper自带的代理选项，通过自己的路由来科学上网，会获得更好的体验)
 
 #### 为 Jellyfin 添加 JAV 媒体库
 

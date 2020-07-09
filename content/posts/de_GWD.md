@@ -18,7 +18,7 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 
 ![de_gwd](https://i.loli.net/2020/07/08/5Zgr29H4TR7WCtQ.png)    
 
-只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。    
+- 只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。    
 
 # 部署
 
@@ -31,24 +31,20 @@ DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容
 ![server](https://i.loli.net/2020/06/10/qWVbimIha9s1UeJ.png)
 
 
-提前准备好域名，做好a记录。    
-
-脚本结束会自动打印出doh，域名，uuid，path等信息。/ 或者用选项11来复查    
+脚本结束会自动打印出doh，域名，uuid，path等信息。或者用 选项11 来复查    
 
 服务端默认有自动更新功能，间歇查询github上的版本号，与本地比对，不一致后会自动生成计划任务，+8 凌晨4点30开始自动更新（pihole组件除外）
 
-nginx配置方面，如需要vps上同时运行wordpress nextcloud等程序。    
+- nginx配置方面，如需要vps上同时运行wordpress nextcloud等程序。    
 
-/etc/nginx/conf.d    
+      /etc/nginx/conf.d    
 
-supp_head 用于存放nginx upstream模块的内容    
+      supp_head 用于存放nginx upstream模块的内容    
 
-supp_body 用于存放wordpress nextcloud等程序的伪静态内容    
+      supp_body 用于存放wordpress nextcloud等程序的伪静态内容    
 
-然后，平常更新时就可以共存了。    
+      然后，平常更新时就可以共存了。    
 
-附：
-[在线生成UUID](https://www.uuidgenerator.net/)
 
 ## 客户端
 
@@ -65,24 +61,20 @@ Compatible Edition (amd64&arm64)
 
 通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。如果x86 cpu比较落后，不能运行docker，那也只能选第二个版本。
 
-首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。
+首次安装时，确保debian能正常获取ip联网。
 
 直接联网安装，不需要挂代理。
 
-选项2，可以用来强制重置pihole密码。
+- 选项2，可以用来强制重置de_GWD与pihole密码。
 
-装完后，关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。
+装完后，建议关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。
 
-
-有公网ip的话，可以选项3安装wireguard组件。
-
-wireguard组件，在每次debian内核更新后，需要重新编译安装。
 
 - 自动每二小时校时
 
 - 自动每天凌晨更新分流规则    
 
-- 组件通过install按钮安装后，刷新页面显示选型
+- 组件通过install按钮安装后，刷新页面显示选项（页面能看到选项 即表示 组件已装上）
    - frp
       - 可以用于映射一个内网的服务端口，也可以用于内网穿透转接wireguard
 
@@ -98,6 +90,7 @@ wireguard组件，在每次debian内核更新后，需要重新编译安装。
 
       - kcp与wireguard皆为udp
 
+- 更新出错时，可以点web ui上的救援按钮，再次进行更新。
 
 
 

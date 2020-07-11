@@ -106,7 +106,7 @@ Compatible Edition (amd64&arm64)
    - 开始安装前，运行`ip route`来获知中转机器的本机ip跟它的网关ip
    - 域名形式同样 `aaa.bbb.com:12345`
    - uuid跟path需手动输入，此时的uuid跟path是用于给家中de_GWD客户端连接用的
-   - 随后会脚本自动会获取客户端脚本，再要救输入几行参数，就和安装de_GWD客户端一样。
+   - 随后会脚本自动会获取客户端脚本，再要求输入几行参数，就和安装de_GWD客户端一样。此时一开始需要输入的de_GWD本机ip跟上级网关ip就是上面`ip route`查询到的。
   
 
 更多疑问 

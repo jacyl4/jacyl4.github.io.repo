@@ -108,6 +108,7 @@ Compatible Edition (amd64&arm64)
    - uuid跟path需手动输入，此时的uuid跟path是用于给家中de_GWD客户端连接用的
    - 随后会脚本自动会获取客户端脚本，再要求输入几行参数，就和安装de_GWD客户端一样。此时一开始需要输入的de_GWD本机ip跟上级网关ip就是上面`ip route`查询到的。
    - 装完后的中转机器上的web ui 访问地址为 `https://aaa.bbb.com:12345/gwd`
+   - 对于中转来说，de_GWD_fwd是庞大了些。但是所用的v2中转方式。每一程都是v2+ws+tls。且性能不用担心。
   
 
 更多疑问 

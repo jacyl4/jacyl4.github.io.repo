@@ -96,20 +96,6 @@ Compatible Edition (amd64&arm64)
 
 ***
 
-## 扩展用法
-
-- server服务端脚本支持以nat形式安装，自适应的。开启脚本要求输入域名时，以`aaa.bbb.com:12345`这种形式安装。会要求输入cloudflare api跟cloudflare email。完成安装后，客户端的节点域名就用`aaa.bbb.com:12345`直接填。
-
-- client_do_fwd中转脚本，是在国内机器上装的。用于上级连de_GWD的服务端，下级连家中的de_GWD客户端
-   
-   - 提前确认好国内中转机器的端口
-   - 开始安装前，运行`ip route`来获知中转机器的本机ip跟它的网关ip
-   - 域名形式同样 `aaa.bbb.com:12345`
-   - uuid跟path需手动输入，此时的uuid跟path是用于给家中de_GWD客户端连接用的
-   - 随后会脚本自动会获取客户端脚本，再要求输入几行参数，就和安装de_GWD客户端一样。此时一开始需要输入的de_GWD本机ip跟上级网关ip就是上面`ip route`查询到的。
-   - 装完后的中转机器上的web ui 访问地址为 `https://aaa.bbb.com:12345/gwd`
-   - 对于中转来说，de_GWD_fwd是庞大了些。但是所用的v2中转方式。每一程都是v2+ws+tls。且性能不用担心。
-  
 
 更多疑问 
 

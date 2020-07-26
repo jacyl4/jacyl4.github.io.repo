@@ -70,7 +70,9 @@ Compatible Edition (amd64&arm64)
 装完后，建议关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。
 
 
-- web ui 默认需要以https访问 （chrome内核浏览器打不开自签名证书网站的时候，在那个页面盲打 thisisunsafe 就能访问了）
+- web ui 默认需要以https访问 （nat机上需要提前映射好443端口，以访问web ui）
+
+- chrome内核浏览器打不开自签名证书网站的时候，在那个页面盲打 thisisunsafe 就能访问了
   
 - 自动每二小时校时
 

@@ -109,9 +109,6 @@ add chain=prerouting src-address-list=local dst-address-list=local action=accept
 
 ```
 /ip firewall mangle
-add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT1 src-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=in
-add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT2 src-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
-add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 src-address-list=dpbr-CMCC action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT1 action=mark-connection new-connection-mark=CT_conn1 passthrough=yes
 add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT2 action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
 add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
@@ -138,20 +135,12 @@ add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-li
 
 ## 4，PCC标记
 
-先做国内不同运营商指定出口，因为电信双拨，双拨的还得PCC聚合下，至于叠不叠带宽，各地随缘了。移动就单拨就直接标记一下就行了。
+国内不同运营商指定出口，因为电信双拨，双拨的还得PCC聚合下，至于叠不叠带宽，各地随缘了。移动就单拨就直接标记一下就行了。
 ```
 /ip firewall mangle
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/0 dst-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment="PCC spec"
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/1 dst-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn1 passthrough=yes
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-list=dpbr-CMCC action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
-```
-
-ros防火墙规则自上而下顺序匹配，上面没匹配到的，就接下来整体聚合。
-```
-/ip firewall mangle
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:3/0 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=PCC
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:3/1 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:3/2 dst-address-type=!local action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/0 dst-address-type=!local dst-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment="PCC spec"
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/1 dst-address-type=!local dst-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn1 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-type=!local dst-address-list=dpbr-CMCC action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 ```
 
 ## 5，让数据根据上面线路标记选择路由

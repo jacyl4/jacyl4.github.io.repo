@@ -118,9 +118,9 @@ add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mar
 
 示例：
 
-111.111.111.111是搬瓦工vps ip，注释名称bwg，走电信线路
+111.111.111.111是搬瓦工vps ip，注释名称bwg cn2gia，走电信线路
 
-222.222.222.222是CloudCone vps ip，注释名称cc，走移动线路
+222.222.222.222是Azure HK vps ip，注释名称azure HK，走移动线路
 ```
 /ip firewall address-list
 add address=111.111.111.111 list=CTv2 comment="bwg cn2gia"

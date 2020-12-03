@@ -123,8 +123,8 @@ add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mar
 222.222.222.222是CloudCone vps ip，注释名称cc，走移动线路
 ```
 /ip firewall address-list
-add address=111.111.111.111 list=CTv2 comment=bwg cn2gia
-add address=222.222.222.222 list=CMv2 comment=azure HK
+add address=111.111.111.111 list=CTv2 comment="bwg cn2gia"
+add address=222.222.222.222 list=CMv2 comment="azure HK"
 ```
 
 ```

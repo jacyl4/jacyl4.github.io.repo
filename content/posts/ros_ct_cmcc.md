@@ -105,7 +105,16 @@ add address=10.0.0.0/24 list=local comment=local
 add chain=prerouting src-address-list=local dst-address-list=local action=accept comment="local"
 ```
 
-## 2，v2线路标记（可选）
+## 2，源进标记
+
+```
+/ip firewall mangle
+add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT1 action=mark-connection new-connection-mark=CT_conn1 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT2 action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
+```
+
+## 3，v2线路标记（可选）
 
 示例：
 
@@ -120,17 +129,9 @@ add address=222.222.222.222 list=CMv2 comment=cc
 
 ```
 /ip firewall mangle
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-list=CTv2 action=mark-routing new-routing-mark=CT1 comment=v2
-add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-list=CMv2 action=mark-routing new-routing-mark=CMCC1
-```
-
-## 3，源进标记
-
-```
-/ip firewall mangle
-add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT1 action=mark-connection new-connection-mark=CT_conn1 passthrough=yes
-add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT2 action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
-add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/0 dst-address-type=!local dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn1 comment=v2
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/1 dst-address-type=!local dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn2
+add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-list=CMv2 action=mark-connection new-connection-mark=CMCC_conn1
 ```
 
 ## 4，PCC标记

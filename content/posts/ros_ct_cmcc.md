@@ -19,7 +19,7 @@ draft: false
 ```
 /interface vrrp add name=vrrp1 interface=eth1 vrid=1
 /interface vrrp add name=vrrp2 interface=eth1 vrid=2
-/interface vrrp add name=vrrp4 interface=eth2 vrid=3
+/interface vrrp add name=vrrp3 interface=eth2 vrid=3
 ```
 
 给端口们预先分配好ip，随自己的习惯分配好了，因为vrrp需要预设好ip才会显示已连接

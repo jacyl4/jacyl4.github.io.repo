@@ -28,12 +28,6 @@ EOF
 
 #### 二，更新升级
 ```
-cat << EOF >/etc/apt/sources.list
-deb http://deb.debian.org/debian buster main contrib non-free
-deb http://deb.debian.org/debian buster-updates main contrib non-free
-deb http://deb.debian.org/debian-security buster/updates main contrib non-free
-EOF
-
 apt update && apt upgrade -y
 apt dist-upgrade
 ```

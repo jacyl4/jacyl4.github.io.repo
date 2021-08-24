@@ -1,6 +1,6 @@
 ---
 title: "Debian 升级"
-tags: [ "debian", "DD", "buster", "stretch" ]
+tags: [ "debian", "stretch", "buster", "bullseye" ]
 categories: [ "linux" ]
 date: 2020-12-10T00:00:00+08:00
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Debian 9 升级 10"
+title: "Debian 升级"
 tags: [ "debian", "DD", "buster", "stretch" ]
 categories: [ "linux" ]
 date: 2020-12-10T00:00:00+08:00

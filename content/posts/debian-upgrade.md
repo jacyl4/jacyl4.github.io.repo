@@ -27,6 +27,7 @@ EOF
 ```
 
 ```
+sed -i "s/ stretch / buster /g" /etc/apt/sources.list.d/*
 apt update && apt -y full-upgrade
 apt -y --purge autoremove && apt -y autoclean
 ```
@@ -54,6 +55,7 @@ EOF
 ```
 
 ```
+sed -i "s/ buster / bullseye /g" /etc/apt/sources.list.d/*
 apt update && apt -y full-upgrade
 apt -y --purge autoremove && apt -y autoclean
 ```

@@ -8,25 +8,13 @@ draft: false
 
 #### 一，Debian 9 升 10
 
-##### 国内
 ```
 cat << EOF >/etc/apt/sources.list
-deb http://mirrors.aliyun.com/debian buster main contrib non-free
-deb http://mirrors.aliyun.com/debian buster-updates main contrib non-free
-deb http://mirrors.aliyun.com/debian-security buster/updates main contrib non-free
+deb http://cloudfront.debian.net/debian buster main contrib non-free
+deb http://cloudfront.debian.net/debian buster-updates main contrib non-free
+deb http://cloudfront.debian.net/debian-security buster/updates main contrib non-free
 EOF
-```
 
-##### 国外
-```
-cat << EOF >/etc/apt/sources.list
-deb http://deb.debian.org/debian buster main contrib non-free
-deb http://deb.debian.org/debian buster-updates main contrib non-free
-deb http://deb.debian.org/debian-security buster/updates main contrib non-free
-EOF
-```
-
-```
 sed -i "s/ stretch / buster /g" /etc/apt/sources.list.d/*
 apt update && apt -y full-upgrade
 apt -y --purge autoremove && apt -y autoclean
@@ -34,27 +22,14 @@ apt -y --purge autoremove && apt -y autoclean
 
 #### 二，Debian 10 升 11
 
-##### 国内
 ```
 cat << EOF >/etc/apt/sources.list
-deb http://mirrors.aliyun.com/debian bullseye main contrib non-free
-deb http://mirrors.aliyun.com/debian bullseye-updates main contrib non-free
-deb http://mirrors.aliyun.com/debian bullseye-backports main contrib non-free
-deb http://mirrors.aliyun.com/debian-security bullseye-security main contrib non-free
+deb http://cloudfront.debian.net/debian bullseye main contrib non-free
+deb http://cloudfront.debian.net/debian bullseye-updates main contrib non-free
+deb http://cloudfront.debian.net/debian bullseye-backports main contrib non-free
+deb http://cloudfront.debian.net/debian-security bullseye-security main contrib non-free
 EOF
-```
 
-##### 国外
-```
-cat << EOF >/etc/apt/sources.list
-deb http://deb.debian.org/debian bullseye main contrib non-free
-deb http://deb.debian.org/debian bullseye-updates main contrib non-free
-deb http://deb.debian.org/debian bullseye-backports main contrib non-free
-deb http://deb.debian.org/debian-security bullseye-security main contrib non-free
-EOF
-```
-
-```
 sed -i "s/ buster / bullseye /g" /etc/apt/sources.list.d/*
 apt update && apt -y full-upgrade
 apt -y --purge autoremove && apt -y autoclean

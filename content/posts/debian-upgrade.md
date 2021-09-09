@@ -28,8 +28,8 @@ EOF
 
 ```
 sed -i "s/ stretch / buster /g" /etc/apt/sources.list.d/*
-apt update --fix-missing && apt upgrade --allow-downgrades
-apt full-upgrade && apt --purge autoremove && apt autoclean
+apt update --fix-missing && apt upgrade --allow-downgrades -y
+apt full-upgrade -y && apt --purge autoremove -y && apt autoclean -y
 ```
 
 #### 二，Debian 10 升 11
@@ -56,8 +56,8 @@ EOF
 
 ```
 sed -i "s/ buster / bullseye /g" /etc/apt/sources.list.d/*
-apt update --fix-missing && apt upgrade --allow-downgrades
-apt full-upgrade && apt --purge autoremove && apt autoclean
+apt update --fix-missing && apt upgrade --allow-downgrades -y
+apt full-upgrade -y && apt --purge autoremove -y && apt autoclean -y
 ```
 
 #### 三，重启查看当前系统版本

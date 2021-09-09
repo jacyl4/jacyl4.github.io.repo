@@ -28,7 +28,7 @@ EOF
 
 ```
 sed -i "s/ stretch / buster /g" /etc/apt/sources.list.d/*
-apt update --fix-missing && apt upgrade --allow-downgrades -y
+apt update --fix-missing && apt upgrade -y
 apt full-upgrade -y && apt --purge autoremove -y && apt autoclean -y
 ```
 
@@ -56,7 +56,7 @@ EOF
 
 ```
 sed -i "s/ buster / bullseye /g" /etc/apt/sources.list.d/*
-apt update --fix-missing && apt upgrade --allow-downgrades -y
+apt update --fix-missing && apt upgrade -y
 apt full-upgrade -y && apt --purge autoremove -y && apt autoclean -y
 ```
 

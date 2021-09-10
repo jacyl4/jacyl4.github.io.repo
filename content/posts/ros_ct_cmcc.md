@@ -173,7 +173,3 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1 routin
 add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routing-mark=CT2
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 routing-mark=CMCC1
 ```
-
-
-# 乖巧 ☆⌒(*＾-゜)v THX!!
-<img src="https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png" width="260" alt="给个赏吧">

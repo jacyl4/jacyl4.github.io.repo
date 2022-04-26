@@ -6,6 +6,7 @@ date: 2020-04-22T00:00:00+08:00
 draft: false
 ---
 
+## for routeros 7.x
 
 实例宽带接入：
 
@@ -80,7 +81,15 @@ add chain=srcnat out-interface=pppoe-CMCC1 action=masquerade
 add chain=dstnat protocol=tcp dst-port=1-65535 in-interface=pppoe-CT1 action=dst-nat to-addresses=10.0.0.5 to-ports=1-65535
 ```
 
-# 五，PCC宽带聚合
+# 五，设置路由表
+```
+/routing table
+add fib name=CT1
+add fib name=CT2
+add fib name=CMCC1
+```
+
+# 六，PCC宽带聚合
 
 ## 0，导入国内运营商ip段
 
@@ -163,13 +172,13 @@ add chain=output connection-mark=CT_conn2 action=mark-routing new-routing-mark=C
 add chain=output connection-mark=CMCC_conn1 action=mark-routing new-routing-mark=CMCC1 passthrough=yes
 ```
 
-# 六，设置路由
+# 七，设置路由
 ```
 /ip route
-add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1
-add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=2
-add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=2
-add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1 routing-mark=CT1
-add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routing-mark=CT2
-add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 routing-mark=CMCC1
+add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=none distance=1
+add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=none distance=2
+add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=none distance=3
+add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=none distance=1 routing-table=CT1
+add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=none distance=1 routing-table=CT2
+add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=none distance=1 routing-table=CMCC1
 ```
